@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* ================= BODY ================= */
+
+body{
+background:linear-gradient(135deg,#fdfbfb,#ebedff);
+color:#444;
+min-height:100vh;
+transition:.4s;
+}
+
+/* ================= NAV ================= */
+
+nav{
+background:rgba(255,255,255,.6);
+backdrop-filter:blur(15px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 60px;
+}
+
+nav h2{
+color:#6c63ff;
+}
+
+nav button{
+padding:8px 18px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+background:linear-gradient(135deg,#a18cd1,#fbc2eb);
+color:white;
+transition:0.3s;
+}
+
+nav button:hover{
+transform:scale(1.05);
+}
+
+/* ================= HEADER ================= */
+
+header{
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{
+color:#6c63ff;
+font-size:30px;
+}
+
+/* ================= LAYOUT ================= */
+
+.dashboard-container{
+display:flex;
+gap:40px;
+padding:30px 60px;
+}
+
+.left-panel{flex:1;}
+.right-panel{flex:1.3;}
+
+/* ================= FORM ================= */
+
+.form-section{
+background:rgba(255,255,255,.9);
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+form input,
+form textarea,
+form select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:12px;
+border:1px solid #e0e0ff;
+background:#f9f9ff;
+}
+
+form button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:18px;
+background:linear-gradient(135deg,#a18cd1,#fbc2eb);
+color:white;
+cursor:pointer;
+}
+
+/* ================= SEARCH ================= */
+
+.search-bar{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border-radius:20px;
+border:none;
+background:#f3f0ff;
+outline:none;
+}
+
+/* ================= STATS ================= */
+
+.stats{
+display:flex;
+justify-content:space-between;
+margin-bottom:15px;
+font-size:14px;
+font-weight:500;
+}
+
+/* ================= FILTERS ================= */
+
+.filters{
+margin-bottom:20px;
+}
+
+.filters button{
+padding:8px 16px;
+border:none;
+border-radius:25px;
+background:#e0dcff;
+margin-right:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.filters button:hover{
+transform:scale(1.05);
+}
+
+/* ================= REMINDER CARDS ================= */
+
+.reminder-card{
+background:rgba(255,255,255,.95);
+padding:18px;
+margin-bottom:15px;
+border-radius:18px;
+box-shadow:0 8px 20px rgba(0,0,0,.05);
+animation:fadeIn 0.4s ease;
+transition:0.3s;
+}
+
+.reminder-card:hover{
+transform:translateY(-3px);
+}
+
+/* Animation */
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(10px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* Priority */
+
+.high{border-left:6px solid #ff6b81;}
+.medium{border-left:6px solid #feca57;}
+.low{border-left:6px solid #1dd1a1;}
+
+/* Completed */
+
+.reminder-card.completed{
+opacity:.6;
+}
+
+.reminder-card.completed h4,
+.reminder-card.completed p,
+.reminder-card.completed small{
+text-decoration:line-through;
+}
+
+/* ================= HEADER INSIDE CARD ================= */
+
+.card-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:8px;
+flex-wrap:wrap;
+gap:6px;
+}
+
+/* Completed badge */
+
+.completed-badge{
+background:#e0f7ec;
+color:#10ac84;
+padding:4px 10px;
+border-radius:20px;
+font-size:12px;
+}
+
+/* ================= STATUS ================= */
+
+.status{
+font-size:12px;
+padding:4px 8px;
+border-radius:10px;
+}
+
+.status.overdue{
+background:#ff6b81;
+color:white;
+}
+
+.status.soon{
+background:#feca57;
+color:black;
+}
+
+.status.upcoming{
+background:#1dd1a1;
+color:white;
+}
+
+/* ================= BUTTONS ================= */
+
+.action-buttons{
+margin-top:12px;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.complete-btn{
+background:linear-gradient(135deg,#1dd1a1,#10ac84);
+color:white;
+border:none;
+padding:8px 14px;
+border-radius:25px;
+cursor:pointer;
+}
+
+.delete-btn{
+background:linear-gradient(135deg,#ff6b81,#ee5253);
+color:white;
+border:none;
+padding:8px 14px;
+border-radius:25px;
+cursor:pointer;
+}
+
+.edit-btn{
+background:linear-gradient(135deg,#74b9ff,#0984e3);
+color:white;
+border:none;
+padding:8px 14px;
+border-radius:25px;
+cursor:pointer;
+}
+
+/* ================= DARK MODE ================= */
+
+.dark{
+background:radial-gradient(circle at 20% 30%,#161a2f,#0b0f1f 70%);
+color:white;
+}
+
+.dark nav{
+background:rgba(20,25,50,.8);
+}
+
+.dark .form-section{
+background:rgba(18,22,45,.9);
+}
+
+.dark input,
+.dark textarea,
+.dark select{
+background:#1e2340;
+border:1px solid #2f3560;
+color:white;
+}
+
+.dark .search-bar{
+background:#1e2340;
+color:white;
+}
+
+.dark .filters button{
+background:#2f3560;
+color:white;
+}
+
+.dark .reminder-card{
+background:rgba(22,26,55,.95);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+.dashboard-container{
+flex-direction:column;
+padding:20px;
+}
+}
+
+/* ================= UPCOMING GLOW ================= */
+
+.upcoming-glow{
+box-shadow:0 0 15px rgba(255,200,0,0.6);
+border-left:6px solid orange;
+}

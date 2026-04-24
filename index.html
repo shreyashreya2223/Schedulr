@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedulr</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>Schedulr</h2>
+        <button id="darkToggle" type="button">Dark Mode</button>
+    </nav>
+
+    <header>
+        <h1>Smart Universal Reminder System</h1>
+        <p>Organize your tasks efficiently ✨</p>
+    </header>
+
+    <div class="dashboard-container">
+
+        <!-- LEFT PANEL -->
+        <div class="left-panel">
+            <section class="form-section">
+                <h3>Add / Edit Reminder</h3>
+
+                <form id="reminderForm">
+
+                    <input 
+                        type="text" 
+                        id="title" 
+                        placeholder="Title" 
+                        required 
+                        minlength="2"
+                    >
+
+                    <textarea 
+                        id="description" 
+                        placeholder="Description"
+                    ></textarea>
+
+                    <input type="date" id="date" required>
+                    <input type="time" id="time" required>
+
+                    <!-- FIXED -->
+                    <select id="type" required>
+                        <option value="">Select Type</option>
+                        <option value="Medicine">Medicine</option>
+                        <option value="Meeting">Meeting</option>
+                        <option value="Task">Task</option>
+                        <option value="Personal">Personal</option>
+                    </select>
+
+                    <!-- FIXED -->
+                    <select id="priority" required>
+                        <option value="">Select Priority</option>
+                        <option value="Low">Low Priority</option>
+                        <option value="Medium">Medium Priority</option>
+                        <option value="High">High Priority</option>
+                    </select>
+
+                    <button type="submit">Save Reminder</button>
+                </form>
+            </section>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="right-panel">
+
+            <!-- 🔍 SEARCH -->
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="🔍 Search reminders..." 
+                class="search-bar"
+            >
+
+            <!-- 📊 STATS -->
+            <div class="stats">
+                <span id="total">Total: 0</span>
+                <span id="pending">Pending: 0</span>
+                <span id="completed">Completed: 0</span>
+            </div>
+
+            <!-- 🔥 FIXED BUTTONS -->
+            <section class="filters">
+                <button type="button" onclick="filterReminders('all')">All</button>
+                <button type="button" onclick="filterReminders('today')">Today</button>
+                <button type="button" onclick="filterReminders('high')">High</button>
+                <button type="button" onclick="filterReminders('completed')">Completed</button>
+            </section>
+
+            <!-- REMINDERS -->
+            <section class="reminder-list">
+                <h3>Your Reminders</h3>
+                <div id="reminderContainer"></div>
+            </section>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
